@@ -44,12 +44,8 @@ The logins for the 21 TOR nodes are user: Pi, password: Slowdown<br/>
 ### Nodes and their Roles
 The Roles played by the nodes are:<br/>
 
-Directories Nodes: node a, b, c
-Exit Nodes: nodes d, e, f, o, p, h
-Proxy Nodes: nodes g, n, u
-Relay Nodes: nodes i, j, k, l, m, q, r, s, t
 
-| Roles  | Nodes |
+| Roles        | Nodes                     |
 | ------ |:-----:|
 | Directories  | a, b, c                   |
 | Exit         | d, e, f, o, p, h          |
@@ -72,10 +68,9 @@ Node i's SD card image: i_image.zip, i_image.z01, i_image.z02, i_image.z03 <br/>
 Node n's SD card image: n_image.zip <br/>
 Node u's SD card image: u_image.zip <br/>
 
-
-
-
-
-
-
 ## Linux Machine Shell Script
+The script `torlab-large` is used to start and stop the TOR nodes.
+
+![Alt text](torlab-large.JPG?raw=true "Title")
+
+For details of the various arguments this script expects, please refer to its source code.
