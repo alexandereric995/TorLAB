@@ -55,6 +55,8 @@ These image files are direct image copies of the RPU SD cards from the nodes a, 
 These image files were created using [win32diskimager](https://sourceforge.net/projects/win32diskimager/). <br/>
 You can refer to the [instructions](https://raspberry-projects.com/pi/pi-operating-systems/win32diskimager) provided by win32diskimager.
 
+To manage large files in GitHub, please use [GitHub LFS](https://git-lfs.github.com/)<br/> 
+
 Each image is compressed to zip files using [Winrar](https://www.win-rar.com/).<br/>
 Where the zip file exceeds GitHub LFS limit of 2GB, it is split to multiple z files:<br/>
 Node a's SD card image: a_image.zip, a_image.z01, a_image.z02, a_image.z03 <br/>
@@ -82,30 +84,28 @@ This quick reference guide is credited to Prof. Pieter Hartel, Erwin Middlesch, 
 (e)	Make sure that the clocks of the RPI are set correctly. If the RPI are connected to the Internet, this will happen automatically. Otherwise run `./torlab-large synch`<br/>
 (f)	Make sure that privoxy is configured correctly and running on the clients (g, n and u)<br/>
 (g)	To start the Tor network on the laptop type (the delay is needed to allow the tor network to stabilise):<br/>
-```
+```sh
 ./torlab-large start
 ```
-<br/>
-wait 300
-<br/>
-```
+wait 300<br/>
+```sh
 ./torlab-large test
 ```
-<br/>
+
 (h)	Bitcoind and the block chain explorer must be started manually on RPI s. On the laptop do:<br/>
 `ssh bitcoin@s`  (password Sl0wd0wn) <br/>
-```
+```sh
 cd ~/bitcoin-testnet-box
 ./bitcoin.sh start
 ```
 This takes a minute or so… Then do: <br/>
-```
+```sh
 cd ~/bitcoin-abe
 python -m Abe.abe --config abe-rpc.conf
 ```
 (i)	Assuming that the displays are connected to the RPI clients g, n, and u, login as pi to each of the clients, run startx, open four terminal windows, in each window ssh as pi to an appropriate RPI, and once logged in run the arm command (no arguments needed).<br/>
 A screenshot of 2 RPIs terminal running `arm`. <br/>
-![arm screenshot](rpi_arm.JPG?raw=true "ARM")
+![Alt text](rpi_arm.JPG?raw=true "Title")
 
 (j)	Instruct your laptop to use 192.168.1.136:8118 as a web proxy, and go to the splash page on node g at http://192.168.1.136/.<br/>
 (k)	Use your web browser to visit the Wallet (login as affhous, password jolt) and check that you have a balance of about 1 BTC.<br/>
@@ -113,17 +113,17 @@ A screenshot of 2 RPIs terminal running `arm`. <br/>
 (m)	Visit the Forum and check that you can log in as affhous (password jolt)<br/>
 (n)	Visit the Market and check that you can log in as buyer affhous (password jolt, passphrase matins) and as vendor StoneIsland (password flow, passphrase wearer) and make a test purchase.<br/>
 (o)	To stop the Tor network from the laptop:<br/>
-```
+```sh
 ./torlab-large stop 
 ```
 (p)	To shutdown the RPI from the laptop:<br/>
-`./torlab-large shutdown` (see Power-down section below)
+`./torlab-large shutdown` (see Power-down section below) <br/>
 (q)	To set all transactions on the market to complete enter the following MySQL query:<br/>
-```
+```sh
 update bw_orders set progress=7
 ```
 (r)	To set all messages to viewed enter the following MySQL query:<br/>
-```
+```sh
 update bw_messages set viewed="1"
 ```
 
