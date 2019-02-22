@@ -27,7 +27,7 @@ Each node's /etc/hosts are hardcoded to know these fixed IPs as:
 192.168.1.147   r
 192.168.1.148   s
 192.168.1.149   t
-192.168.1.149   u
+192.168.1.150   u
 ```
 
 Therefore, the respective /etc/hostname in each node has to set accordingly, e.g. "a" for node a, "b" for node b and so on. 
